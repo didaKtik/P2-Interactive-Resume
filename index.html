@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+</style>
+
+<body>
+  <div id="graph">
+    <svg>
+      <defs>
+        <marker id="arrowhead" markerWidth="5" markerHeight="5" orient="auto" refX="0" refY="2.5">
+          <polygon points="0,0 5,2.5 0,5 2,2.5"/>    <!-- triangle pointing right -->
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</body>
+
+
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+//
+// LIFE GRAPH WITH D3
+//
+
+// SIZES
+// All sizes are proportional to img_wdt, so the graph is easy to scale
+// Whatever the dimensions of the images, they are fitted in a img_wdt * img_wdt box
+var img_wdt = 60,
+    margin = {top: img_wdt / 3, right: img_wdt / 3, bottom: img_wdt / 3, left: img_wdt / 3},
+    width = 7 * img_wdt - margin.right - margin.left,
+    height = 8.5 * img_wdt - margin.top - margin.bottom,
+    textSize = 13 / 60 * img_wdt;
+// Set graph container width for correct centering
+var totWidth = width + margin.right + margin.left;
+d3.select('#graph')
+    .style('width', totWidth + 'px')
+
+// MARGINS
+// Use d3 margin convention
+var graph = d3.select('#graph svg')
+    .attr('width', width + margin.right + margin.left)
+    .attr('height', height + margin.top + margin.bottom)
+  .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+// DATA
+var myData = [
+  {x: 0.4, y: 0.293, name: 'crash.jpg', year: '1991+', color: '#a65628'},
+  {x: 0, y: 1, name: 'streamline.png', year: '2009', color: '#ffff33'},
+  {x: 0.293, y: 1.707, name: 'army.jpg', year: '2011', color: '#ff7f00'},
+  {x: 1, y: 2, name: 'logo-X-small.jpg', year: '2012', color: '#984ea3'},
+  {x: 1.707, y: 2.293, name: 'eiffel.jpg', year: '2013', color: '#4daf4a'},
+  {x: 2, y: 3, name: 'paulaner.png', year: '2014', color: '#377eb8'},
+  {x: 1.707, y: 3.707, name: 'gaston.jpg', year: '2015', color: '#e41a1c'}
+];
+
+// SCALES
+// - img_wdt so that the images fit in the g container
+var xScale = d3.scale.linear()
+    .range([0, width - img_wdt])
+    .domain([0, d3.max(myData, function(d) { return d.x; })]);
+
+var yScale = d3.scale.linear()
+    .range([height - img_wdt, 0])
+    .domain([0, d3.max(myData, function(d) { return d.y; })]);
+
+// X AXIS
+var xAxis = graph.append('g')
+    .attr('class', 'xAxis')
+    .attr('transform', 'translate(' + width / 2 + ',' + height + ')');
+
+// Left arrow, the line is made invisible, only the head is displayed
+xAxis.append('line')
+    .attr('x1', 0)
+    .attr('x2', -width / 4)
+    .attr('y1', 0)
+    .attr('y2', 0);
+
+// Right arrow
+xAxis.append('line')
+    .attr('x1', 0)
+    .attr('x2', width / 4)
+    .attr('y1', 0)
+    .attr('y2', 0);
+
+xAxis.append('text')
+    .attr('class', 'left-text')
+    .attr('x', -width / 4 + 3)
+    .attr('y', textSize / 3)
+    .attr('font-size', textSize)
+    .text('FOCUSING');
+
+xAxis.append('text')
+    .attr('class', 'right-text')
+    .attr('x', width / 4 - 3)
+    .attr('y', textSize / 3)
+    .attr('font-size', textSize)
+    .text('ENJOYING');
+
+// Y AXIS
+var yAxis = graph.append('g')
+    .attr('class', 'yAxis')
+
+yAxis.selectAll('g')
+    .data(myData)
+  .enter().append('g')
+    .attr('transform', function(d) {
+      var yOffset = yScale(d.y) - 2;
+      var xOffset = xScale(d.x) + img_wdt / 2;
+      return 'translate(' + xOffset + ', ' + yOffset + ')';
+    })
+    .attr('class', 'year')
+  .append('text')
+    .text(function(d) { return d.year; })
+    .attr('fill', function(d) { return d.color; })
+    .attr('font-size', textSize);
+
+// IMAGES
+graph.selectAll('image')
+    .data(myData)
+  .enter().append('image')
+    .attr('width', img_wdt)
+    .attr('height', img_wdt)
+    .attr('x', function(d) { return xScale(d.x); })
+    .attr('y', function(d) { return yScale(d.y); })
+    .attr('xlink:href', function(d) { return './img/' + d.name; });
+
+</script>

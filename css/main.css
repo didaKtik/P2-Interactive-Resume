@@ -1,0 +1,44 @@
+/* LIFE GRAPH WITH D3 */
+#graph {
+  width: 100%;
+  margin: 0 auto;
+}
+
+text {
+  font-family: Tahoma, sans-serif;
+/*  font-size    : smaller;
+  text-anchor : middle;
+  stroke       : #777;
+  fill: blue;
+  fill-opacity: 0.5;
+  stroke: blue;
+  stroke-width: 0.5;*/
+}
+
+/* X AXIS */
+line {
+  stroke-width: 3;
+  marker-end: url(#arrowhead);
+}
+
+#arrowhead {
+  fill: black;
+  fill-opacity: 0.5;
+}
+
+.left-text {
+  fill: black;
+  fill-opacity: 0.5;
+  text-anchor: start;
+}
+
+.right-text {
+  fill: black;
+  fill-opacity: 0.5;
+  text-anchor: end;
+}
+
+/* Y AXIS */
+.year {
+  text-anchor: middle;
+}
