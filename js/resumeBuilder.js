@@ -49,7 +49,7 @@ var drawResume = function() {
 		y : 1.707,
 		img : 'army.jpg',
 		year : '2011',
-		color : '#984ea3',
+		color : '#ff7f00',
 		snd : 'bullet-shell-3',
 		schools : [
 			{
@@ -178,7 +178,7 @@ var drawResume = function() {
 		img : 'gaston.jpg',
 		year : '2015',
 		color : '#e41a1c',
-		snd : 'guitar',
+		snd : 'bleeeh',
 		schools : [
 			{
 				'date' : 'October 2014 -<br> Present',
@@ -194,11 +194,46 @@ var drawResume = function() {
 		],
 		onlineCourses : [
 			{
+				'date' : 'April 2015',
+				'institution' : 'Udacity',
+				'title' : 'Intro to HTML and CSS',
+				'url' : 'https://www.udacity.com/course/intro-to-html-and-css--ud304',
+				'urlImg' : 'https://lh6.ggpht.com/KHjK8i_BBLXVYAverR73RvYt06rPk7JnKQWcUIyzMYUnVSPL_zC_asTuM-e69zkibagGRnC5u-bB04nPTQ=s276#w=1278&h=786'
+			},
+			{
+				'date' : 'April 2015 -<br> Mai 2015',
+				'institution' : 'Udacity',
+				'title' : 'Responsive Web Design Fundamentals',
+				'url' : 'https://www.udacity.com/course/responsive-web-design-fundamentals--ud893',
+				'urlImg' : 'https://lh6.ggpht.com/nKVxhzkzJcyDvw2QxIO1nH55uk5Y6e34XNGnnRUWS3No2wRZ8fyBfYzfILhJZslqnbvt6yHpbNlnor6S4vA=s276#w=2080&h=1279'
+			},
+			{
 				'date' : 'Mai 2015',
 				'institution' : 'Udacity',
+				'title' : 'Responsive Images',
+				'url' : 'https://www.udacity.com/course/responsive-images--ud882',
+				'urlImg' : 'https://lh3.googleusercontent.com/0-8SA41CiD_MZ-yRZ3YX04wYYtV4IjKuVvuRHl-LB2h_2pCDw2UEkLFjUf86GcHGJO1rhRFTBoq9bULT1Qc=s276#w=1724&h=1060'
+			},
+			{
+				'date' : 'Mai 2015',
+				'institution' : 'Udacity',
+				'title' : 'How to Use Git and Github',
+				'url' : 'https://www.udacity.com/course/how-to-use-git-and-github--ud775',
+				'urlImg' : 'https://lh5.ggpht.com/y6QqOHLmFIoeSfv2eTSAkqKxFiWVXaWvpIfInxf9nhf_SPBFf5rXElThQTZbsUFram7UEb8eN2gAUe9fLE5H=s277#w=1725&h=1060'
+			},
+			{
+				'date' : 'Mai 2015 -<br> June 2015',
+				'institution' : 'Udacity',
 				'title' : 'Javascript Basics',
-				'url' : 'https://www.udacity.com/course/viewer#!/c-ud804-nd',
-				'img' : 'gaston.jpg'
+				'url' : 'https://www.udacity.com/course/javascript-basics--ud804',
+				'urlImg' : 'https://lh6.ggpht.com/TY7yDlB-w_lMOQHAtOBZjnn-hYAsggB_9TX8TcX1XeR1kTYF4HEggwsxGKd8Ri3rag1USR0gPQvcZvJN5cw=s277#w=788&h=484'
+			},
+			{
+				'date' : 'Mai 2015 -<br> June 2015',
+				'institution' : 'Udacity',
+				'title' : 'Intro to jQuery',
+				'url' : 'https://www.udacity.com/course/intro-to-jquery--ud245',
+				'urlImg' : 'https://lh3.ggpht.com/lB5iRpDRGX9DbDvxXD1yyJO_ogqX2_XX1zgeAV9tOovVPc6VLgTb77YglQ_CkILg7KQGoFGys04UYOk-C3Pf=s276#w=1753&h=1078'
 			}
 		]
 	};
@@ -379,7 +414,7 @@ var drawResume = function() {
 	var HTMLtitle =
 		'<div class="row">' +
 		  '<div class="col-xs-12">' +
-		  	'<hr>' +
+		  	'<hr class="hr-title">' +
 		    '<h2>%title%</h2>' +
 		  '</div>' +
 		'</div>';
@@ -395,10 +430,21 @@ var drawResume = function() {
 		  '<div class="large"></div>' +
 		  '<img class="entry-img small" src="img/%img%"/>' +
 		'</div>';
+	var HTMLurlImg =
+		'<div class="col-xs-12 col-sm-2 col-sm-offset-1 magnify">' +
+		  '<div class="large"></div>' +
+		  '<a href="%url%"><img class="entry-img small" src="%urlImg%"/></a>' +
+		'</div>';
 	var addImg = function(object, entryType) {
 		if (object.hasOwnProperty('img')) {
     		var selector = '.' + entryType + '-entry:last';
 			$(selector).append(HTMLimg.replace('%img%', object.img));
+		}
+		else if (object.hasOwnProperty('urlImg')) {
+    		var selector = '.' + entryType + '-entry:last';
+    		var html = HTMLurlImg.replace('%urlImg%', object.urlImg)
+    			.replace('%url%', object.url)
+			$(selector).append(html);
 		}
 	}
 
@@ -468,7 +514,9 @@ var drawResume = function() {
 	      '%date%' +
 	    '</div>' +
 	    '<div class="col-xs-12 col-sm-7">' +
-	      '<div class="entry-title"><a href=%url%>%title%</a></div>' +
+	      '<div class="entry-title">' +
+	        '<a class="a-entry-title" href=%url%>%title%</a>' +
+	      '</div>' +
 	      '<div class="entry-institution"> - %institution%</div>' +
 	    '</div>' +
 	  '</div>';
@@ -741,8 +789,6 @@ var drawResume = function() {
 		// pinPoster(locations) creates pins on the map for each location in
 		// the locations array
 		pinPoster(locations);
-		// console.log(placeArray);
-		// createMapMarker(placeArray);
 
 	}
 
