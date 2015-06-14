@@ -1,6 +1,10 @@
 /*
   RESUME
 */
+body {
+  margin: 0 0 15px 0;
+}
+
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -44,7 +48,7 @@ hr {
 }
 
 a:hover {
-  color: #a6cee3;
+  color: #ff7f00;
 }
 
 .container-fluid {
@@ -217,7 +221,45 @@ line {
   margin: 0 auto;
 }
 
-
+/*
+  MOVIE TILES
+*/
+/*#trailer .modal-dialog {
+    margin-top: 200px;
+    width: 640px;
+    height: 480px;
+}
+.hanging-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    z-index: 9001;
+}
+#trailer-video {
+    width: 100%;
+    height: 100%;
+}
+.movie-tile {
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.movie-tile:hover {
+    background-color: #EEE;
+    cursor: pointer;
+}
+.scale-media {
+    padding-bottom: 56.25%;
+    position: relative;
+}
+.scale-media iframe {
+    border: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: white;
+}*/
 
 /*
   RESPONSIVE
@@ -371,40 +413,3 @@ line {
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
-
-
-/*
-  MAGNIFYING GLASS
-*/
-/*
-  From thecodeplayer.com:
-  http://thecodeplayer.com/walkthrough/magnifying-glass-for-images-using-jquery-and-css3
-*/
-/*.magnify {
-  width: 200px;
-  margin: 0 auto;
-  position: relative;
-}*/
-
-/* Lets create the magnifying glass */
-/*.large {
-  width: 175px; height: 175px;
-  position: absolute;
-  border-radius: 100%;*/
-
-  /*Multiple box shadows to achieve the glass effect*/
-  /*box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85),
-  0 0 7px 7px rgba(0, 0, 0, 0.25),
-  inset 0 0 40px 2px rgba(0, 0, 0, 0.25);*/
-
-  /*Lets load up the large image first*/
-  /*background: url('http://thecodeplayer.com/uploads/media/iphone.jpg') no-repeat;*/
-  /*background: './img/army.jpg' no-repeat;*/
-
-
-  /*hide the glass by default*/
-  /*display: none;
-}*/
-
-/* To solve overlap bug at the edges during magnification */
-/*.small { display: block; }*/

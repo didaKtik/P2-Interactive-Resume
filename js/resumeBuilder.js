@@ -6,7 +6,7 @@ var drawResume = function() {
 	var y1991 = {
 		x : 0.4,
 		y : 0.293,
-		img : 'arcachon.jpg',
+		img : 'arcachon',
 		year : '1991+',
 		color : '#a65628',
 		snd : 'bullet-shell-1',
@@ -16,10 +16,10 @@ var drawResume = function() {
 				'institution' : 'In the melting pot',
 				'location' : 'Arcachon, France',
 				'descriptions' : [
-					'Enjoyed a big family and the sea',
-					'Got interested in science'
+					'Enjoyed a big family and the sea.',
+					'Got interested in the trajectory of cannonballs.'
 				],
-				'img' : 'arcachon.jpg'
+				'img' : 'arcachon'
 			}
 		]
 	};
@@ -27,19 +27,19 @@ var drawResume = function() {
 	var y2009 = {
 		x : 0,
 		y : 1,
-		img : 'streamline.png',
+		img : 'streamline',
 		year : '2009',
 		color : '#ffff33',
 		snd : 'bullet-shell-2',
 		schools : [
 			{
 				'date' : 'September 2008 -<br> July 2010',
-				'institution' : 'Lycée Sainte Geneviève',
+				'institution' : '<a href="http://www.bginette.com/">Lycée Sainte Geneviève</a>',
 				'location' : 'Versailles, France',
 				'descriptions' : [
 					'Studied mathematics, physics and chemistry to prepare for the national entrance exams to French engineering schools.'
 				],
-				'img' : 'streamline.png'
+				'img' : 'streamline'
 			}
 		]
 	};
@@ -47,30 +47,30 @@ var drawResume = function() {
 	var y2011 = {
 		x : 0.293,
 		y : 1.707,
-		img : 'army.jpg',
+		img : 'army',
 		year : '2011',
 		color : '#ff7f00',
 		snd : 'bullet-shell-3',
 		schools : [
 			{
 				'date' : 'Mai 2011 -<br> July 2011',
-				'institution' : 'École Polytechnique',
+				'institution' : '<a href="https://www.polytechnique.edu/">École Polytechnique</a>',
 				'location' : 'Palaiseau, France',
 				'descriptions' : [
 					'First year: classes on mathematics, quantum physics, computer science, economics, probabilities.'
 				],
-				'img' : 'logo-X-small.jpg'
+				'img' : 'logoX'
 			}
 		],
 		works : [
 			{
 				'date' : 'September 2010 -<br> April 2011',
-				'institution' : 'French Army',
+				'institution' : '<a href="http://rsma-martinique.org/">French Army</a>',
 				'location' : 'Fort-de-France, Martinique',
 				'descriptions' : [
 					'Served in a regiment dedicated to giving professional training and confidence to young people failing at school.'
 				],
-				'img' : 'army.jpg'
+				'img' : 'army'
 			}
 		]
 	};
@@ -78,31 +78,31 @@ var drawResume = function() {
 	var y2012 = {
 		x : 1,
 		y : 2,
-		img : 'logo-X-small.jpg',
+		img : 'logoX',
 		year : '2012',
 		color : '#984ea3',
 		snd : 'bullet-shell-4',
 		schools : [
 			{
 				'date' : 'September 2011 -<br> Mai 2012',
-				'institution' : 'École Polytechnique',
+				'institution' : '<a href="https://www.polytechnique.edu/">École Polytechnique</a>',
 				'location' : 'Palaiseau, France',
 				'descriptions' : [
 					'Second year: classes on mechanics, statistical physics, numerical analysis, relativity, statistics, economics, philosophy and sociology.'
 				],
-				'img' : 'logo-X-small.jpg'
+				'img' : 'logoX'
 			}
 		],
 		works : [
 			{
 				'date' : 'June 2012 -<br> August 2012',
-				'institution' : 'Berner & Mattner',
+				'institution' : '<a href="http://www.berner-mattner.com/">Berner & Mattner</a>',
 				'location' : 'Munich, Germany',
 				'descriptions' : [
 					'Took part in the regional project "Bayerische Kompetenzen für Schwarm-Missionen".',
 					'Comparison of softwares and testbeds to choose the most appropriate tools to simulate communications between drones.'
 				],
-				'img' : 'swarm.jpg'
+				'img' : 'swarm'
 			}
 		]
 	}
@@ -110,31 +110,31 @@ var drawResume = function() {
 	var y2013 = {
 		x : 1.707,
 		y : 2.293,
-		img : 'eiffel.jpg',
+		img : 'eiffel',
 		year : '2013',
 		color : '#4daf4a',
 		snd : 'bullet-shell-5',
 		schools : [
 			{
 				'date' : 'September 2013 -<br> April 2014',
-				'institution' : 'École Polytechnique',
+				'institution' : '<a href="https://www.polytechnique.edu/">École Polytechnique</a>',
 				'location' : 'Palaiseau, France',
 				'descriptions' : [
 					'Third year: classes on random models in mathematic, biodiversity, statistics, hydrology, economics.'
 				],
-				'img' : 'logo-X-small.jpg'
+				'img' : 'logoX'
 			}
 		],
 		works : [
 			{
 				'date' : 'Mai 2013 -<br> July 2013',
-				'institution' : 'Max Planck Institüt für Meteorologie',
+				'institution' : '<a href="http://www.mpimet.mpg.de/">Max Planck Institüt für Meteorologie</a>',
 				'location' : 'Hamburg',
 				'descriptions' : [
 					'Developed a toy climate model in Fortran',
 					'Prepared and gave a two-hour lecture to present the model to master students'
 				],
-				'img' : 'cloud.jpg'
+				'img' : 'cloud'
 			}
 		]
 	}
@@ -142,32 +142,32 @@ var drawResume = function() {
 	var y2014 = {
 		x : 2,
 		y : 3,
-		img : 'paulaner.png',
+		img : 'paulaner',
 		year : '2014',
 		color : '#377eb8',
 		snd : 'bullet-shell-6',
 		schools : [
 			{
 				'date' : 'October 2013 -<br> June 2014',
-				'institution' : 'Technische Universität München (TUM)',
+				'institution' : '<a href="http://www.tum.de/en/homepage/">Technische Universität München (TUM)</a>',
 				'location' : 'Munich, Germany',
 				'descriptions' : [
 					'M.Sc. in Transportation Systems, first year.',
 					'Classes on traffic control, transport planning, intelligent vehicles, geographic information systems (GIS), sociology.'
 				],
-				'img' : 'paulaner.png'
+				'img' : 'paulaner'
 			}
 		],
 		works : [
 			{
 				'date' : 'August 2014 -<br> Ocotber 2014',
-				'institution' : 'The Shift Project',
+				'institution' : '<a href="http://www.theshiftproject.org/">The Shift Project</a>',
 				'location' : 'Paris, France',
 				'descriptions' : [
 					'Took part in a working group on daily mobility in periurban areas.',
 					'Focused on simulating the consumption of vehicles.'
 				],
-				'img' : 'shift.jpg'
+				'img' : 'shift'
 			}
 		]
 	}
@@ -175,62 +175,62 @@ var drawResume = function() {
 	var y2015 = {
 		x : 1.707,
 		y : 3.707,
-		img : 'gaston.jpg',
+		img : 'gaston',
 		year : '2015',
 		color : '#e41a1c',
 		snd : 'bleeeh',
 		schools : [
 			{
 				'date' : 'October 2014 -<br> Present',
-				'institution' : 'Technische Universität München (TUM)',
+				'institution' : '<a href="http://www.tum.de/en/homepage/">Technische Universität München (TUM)</a>',
 				'location' : 'Munich, Germany',
 				'descriptions' : [
 					'M.Sc. in Transportation Systems, second year.',
 					'Project seminar: development of a parking management strategy on a research center of BMW.',
 					'Master thesis on a policy to promote the use of lighter vehicles in city centers.'
 				],
-				'img' : 'paulaner.png'
+				'img' : 'paulaner'
 			}
 		],
 		onlineCourses : [
 			{
 				'date' : 'April 2015',
-				'institution' : 'Udacity',
+				'institution' : '<a href="https://www.udacity.com/">Udacity</a>',
 				'title' : 'Intro to HTML and CSS',
 				'url' : 'https://www.udacity.com/course/intro-to-html-and-css--ud304',
 				'urlImg' : 'https://lh6.ggpht.com/KHjK8i_BBLXVYAverR73RvYt06rPk7JnKQWcUIyzMYUnVSPL_zC_asTuM-e69zkibagGRnC5u-bB04nPTQ=s276#w=1278&h=786'
 			},
 			{
 				'date' : 'April 2015 -<br> Mai 2015',
-				'institution' : 'Udacity',
+				'institution' : '<a href="https://www.udacity.com/">Udacity</a>',
 				'title' : 'Responsive Web Design Fundamentals',
 				'url' : 'https://www.udacity.com/course/responsive-web-design-fundamentals--ud893',
 				'urlImg' : 'https://lh6.ggpht.com/nKVxhzkzJcyDvw2QxIO1nH55uk5Y6e34XNGnnRUWS3No2wRZ8fyBfYzfILhJZslqnbvt6yHpbNlnor6S4vA=s276#w=2080&h=1279'
 			},
 			{
 				'date' : 'Mai 2015',
-				'institution' : 'Udacity',
+				'institution' : '<a href="https://www.udacity.com/">Udacity</a>',
 				'title' : 'Responsive Images',
 				'url' : 'https://www.udacity.com/course/responsive-images--ud882',
 				'urlImg' : 'https://lh3.googleusercontent.com/0-8SA41CiD_MZ-yRZ3YX04wYYtV4IjKuVvuRHl-LB2h_2pCDw2UEkLFjUf86GcHGJO1rhRFTBoq9bULT1Qc=s276#w=1724&h=1060'
 			},
 			{
 				'date' : 'Mai 2015',
-				'institution' : 'Udacity',
+				'institution' : '<a href="https://www.udacity.com/">Udacity</a>',
 				'title' : 'How to Use Git and Github',
 				'url' : 'https://www.udacity.com/course/how-to-use-git-and-github--ud775',
 				'urlImg' : 'https://lh5.ggpht.com/y6QqOHLmFIoeSfv2eTSAkqKxFiWVXaWvpIfInxf9nhf_SPBFf5rXElThQTZbsUFram7UEb8eN2gAUe9fLE5H=s277#w=1725&h=1060'
 			},
 			{
 				'date' : 'Mai 2015 -<br> June 2015',
-				'institution' : 'Udacity',
+				'institution' : '<a href="https://www.udacity.com/">Udacity</a>',
 				'title' : 'Javascript Basics',
 				'url' : 'https://www.udacity.com/course/javascript-basics--ud804',
 				'urlImg' : 'https://lh6.ggpht.com/TY7yDlB-w_lMOQHAtOBZjnn-hYAsggB_9TX8TcX1XeR1kTYF4HEggwsxGKd8Ri3rag1USR0gPQvcZvJN5cw=s277#w=788&h=484'
 			},
 			{
 				'date' : 'Mai 2015 -<br> June 2015',
-				'institution' : 'Udacity',
+				'institution' : '<a href="https://www.udacity.com/">Udacity</a>',
 				'title' : 'Intro to jQuery',
 				'url' : 'https://www.udacity.com/course/intro-to-jquery--ud245',
 				'urlImg' : 'https://lh3.ggpht.com/lB5iRpDRGX9DbDvxXD1yyJO_ogqX2_XX1zgeAV9tOovVPc6VLgTb77YglQ_CkILg7KQGoFGys04UYOk-C3Pf=s276#w=1753&h=1078'
@@ -336,15 +336,15 @@ var drawResume = function() {
 				.text('Enjoying');
 
 		// TILES
-		var tile = graph.selectAll('.graph-tile')
+		var tiles = graph.selectAll('.graph-tile')
 				.data(myData)
 			.enter().append('g')
-				.attr('class', 'graph-tile hvr-buzz-out')
+				.attr('class', 'graph-tile hvr-buzz-out');
 
 		// YEARS
-		tile.append('text')
+		tiles.append('text')
 				.attr('transform', function(d) {
-					var yOffset = yScale(d.y) - 2;
+					var yOffset = yScale(d.y) -2;
 					var xOffset = xScale(d.x) + img_wdt / 2;
 					return 'translate(' + xOffset + ', ' + yOffset + ')';
 				})
@@ -354,33 +354,32 @@ var drawResume = function() {
 				.text(function(d) { return d.year; });
 
 		// IMAGES
-		var tileImage = tile.append('image')
+		var tileImages = tiles.append('image')
 				.attr({
 						class: 'graph-img',
 						width: img_wdt,
 						height: img_wdt,
 						x: function(d) { return xScale(d.x); },
 						y: function(d) { return yScale(d.y); },
-						'xlink:href': function(d) { return './img/' + d.img; }
+						'xlink:href': function(d) { return './img/' + d.img + '-120.jpg'; }
 				});
 
 
-
 		// SOUNDS
-		var audio = d3.select('body').selectAll('audio')
+		var audios = d3.select('body').selectAll('audio')
 				.data(myData)
 			.enter().append('audio')
 				.attr('src', function(d) { return './snd/' + d.snd +'.mp3'; })
 				.attr('class', function(d) { return d.snd; });
 
-		tile.on('mouseenter', function(d) {
+		tiles.on('mouseenter', function(d) {
 			var selector = '.' + d.snd;
 			$(selector)[0].play();
 			// audio[i].play();
 		});
 
 		// ANIMATION: CLICK
-		tileImage.on('click', function(d) {
+		tileImages.on('click', function(d) {
 			emptySection('schools');
 			emptySection('onlineCourses');
 			emptySection('works');
@@ -397,6 +396,9 @@ var drawResume = function() {
 			if (d.hasOwnProperty('allTheRest')) {
 				displayAllTheRest(d.allTheRest);
 			}
+			$(document).ready(function() {
+				$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+			});
 		});
 
 	}
@@ -426,23 +428,24 @@ var drawResume = function() {
 	}
 
 	var HTMLimg =
-		'<div class="col-xs-12 col-sm-2 col-sm-offset-1 magnify">' +
-		  '<div class="large"></div>' +
-		  '<img class="entry-img small" src="img/%img%"/>' +
+		'<div class="col-xs-12 col-sm-2 col-sm-offset-1">' +
+		  '<picture>' +
+            '<source srcset="img/%img%-380.webp" type="image/webp">' +
+            '<img class="entry-img" src="img/%img%-380.jpg" alt="%img% image">' +
+          '</picture>' +
 		'</div>';
 	var HTMLurlImg =
-		'<div class="col-xs-12 col-sm-2 col-sm-offset-1 magnify">' +
-		  '<div class="large"></div>' +
-		  '<a href="%url%"><img class="entry-img small" src="%urlImg%"/></a>' +
+		'<div class="col-xs-12 col-sm-2 col-sm-offset-1">' +
+		  '<a href="%url%"><img class="entry-img" src="%urlImg%"/></a>' +
 		'</div>';
 	var addImg = function(object, entryType) {
 		if (object.hasOwnProperty('img')) {
     		var selector = '.' + entryType + '-entry:last';
-			$(selector).append(HTMLimg.replace('%img%', object.img));
+			$(selector).append(HTMLimg.replace(/%img%/g, object.img));
 		}
 		else if (object.hasOwnProperty('urlImg')) {
     		var selector = '.' + entryType + '-entry:last';
-    		var html = HTMLurlImg.replace('%urlImg%', object.urlImg)
+    		var html = HTMLurlImg.replace(/%urlImg%/g, object.urlImg)
     			.replace('%url%', object.url)
 			$(selector).append(html);
 		}
@@ -625,6 +628,33 @@ var drawResume = function() {
 	};
 
 
+	//
+	// MOVIE TILES
+	//
+	// Pause the video when the modal is closed
+	// $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+	//     // Remove the src so the player itself gets removed, as this is the only
+	//     // reliable way to ensure the video stops playing in IE
+	//     $("#trailer-video-container").empty();
+	// });
+	// // Start playing the video whenever the trailer modal is opened
+	// $(document).on('click', '.movie-tile', function (event) {
+	//     var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+	//     var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+	//     $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+	//       'id': 'trailer-video',
+	//       'type': 'text-html',
+	//       'src': sourceUrl,
+	//       'frameborder': 0
+	//     }));
+	// });
+	// // Animate in the movies when the page loads
+	// $(document).ready(function () {
+	//   $('.movie-tile').hide().first().show("fast", function showNext() {
+	//     $(this).next("div").show("fast", showNext);
+	//   });
+	// });
+
 
 	//
 	// MAP
@@ -751,7 +781,10 @@ var drawResume = function() {
 			if (status == google.maps.places.PlacesServiceStatus.OK) {
 				placeArray.push(results[0]);
 			}
-			createMapMarker(placeArray);
+			// Sometimes lastCallback is called after callback, resulting in a not-complete placeArray
+			// Couldn't figure out how to use $.Deferred with GMaps textSearch (it is not a deferred object)
+			// So this is the tweak, there is certainly something cleaner to do
+			setTimeout(createMapMarker(placeArray), 500);
 		}
 
 		/*
@@ -810,10 +843,12 @@ var drawResume = function() {
 
 	// BIO PICTURE ANIMATION
 	$('.biopic').on('mouseover', function() {
-		$('.biopic').attr('src', 'img/tolstoi.jpg')
+		$('.biopic').prev().attr('srcset', './img/tolstoi-120.webp')
+		$('.biopic').attr('src', './img/tolstoi-120.jpg')
 	});
 	$('.biopic').mouseleave(function() {
-		$('.biopic').attr('src', 'img/biopic.jpg')
+		$('.biopic').prev().attr('srcset', './img/biopic-120.webp')
+		$('.biopic').attr('src', './img/biopic-120.jpg')
 	});
 
 	// SOUNDS
@@ -835,81 +870,6 @@ var drawResume = function() {
 	$('#map').mouseenter(function() {
 	  $('.water-splash')[0].play();
 	});
-
-	// MAGNIFYING GLASS
-	/*
-	  From thecodeplayer.com:
-	  http://thecodeplayer.com/walkthrough/magnifying-glass-for-images-using-jquery-and-css3
-	*/
-	var native_width = 0;
-	var native_height = 0;
-
-	//Now the mousemove function
-	$('.magnify').mousemove(function(e) {
-	  	$( '.header' ).remove();
-		// alert('Handler for .mousemove() called at ');
-		// console.log('Hello Dear');
-		//When the user hovers on the image, the script will first calculate
-		//the native dimensions if they don't exist. Only after the native dimensions
-		//are available, the script will show the zoomed version.
-		if(!native_width && !native_height)
-		{
-			//This will create a new image object with the same image as that in .small
-			//We cannot directly get the dimensions from .small because of the
-			//width specified to 200px in the html. To get the actual dimensions we have
-			//created this image object.
-			var image_object = new Image();
-			image_object.src = $('.small').attr('src');
-
-			//This code is wrapped in the .load function which is important.
-			//width and height of the object would return 0 if accessed before
-			//the image gets loaded.
-			console.log(image_object.width);
-			native_width = image_object.width;
-			native_height = image_object.height;
-		}
-		else
-		{
-			//x/y coordinates of the mouse
-			//This is the position of .magnify with respect to the document.
-			var magnify_offset = $(this).offset();
-			//We will deduct the positions of .magnify from the mouse positions with
-			//respect to the document to get the mouse positions with respect to the
-			//container(.magnify)
-			var mx = e.pageX - magnify_offset.left;
-			var my = e.pageY - magnify_offset.top;
-
-			//Finally the code to fade out the glass if the mouse is outside the container
-			if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0)
-			{
-				$('.large').fadeIn(100);
-			}
-			else
-			{
-				$('.large').fadeOut(100);
-			}
-			if($('.large').is(':visible'))
-			{
-				//The background position of .large will be changed according to the position
-				//of the mouse over the .small image. So we will get the ratio of the pixel
-				//under the mouse pointer with respect to the image and use that to position the
-				//large image inside the magnifying glass
-				var rx = Math.round(mx/$('.small').width()*native_width - $('.large').width()/2)*-1;
-				var ry = Math.round(my/$('.small').height()*native_height - $('.large').height()/2)*-1;
-				var bgp = rx + 'px ' + ry + 'px';
-
-				//Time to move the magnifying glass with the mouse
-				var px = mx - $('.large').width()/2;
-				var py = my - $('.large').height()/2;
-				//Now the glass moves with the mouse
-				//The logic is to deduct half of the glass's width and height from the
-				//mouse coordinates to place it with its center at the mouse coordinates
-
-				//If you hover on the image now, you should see the magnifying glass in action
-				$('.large').css({left: px, top: py, backgroundPosition: bgp});
-			}
-		}
-	});
-};
+}
 
 drawResume();

@@ -1,2 +1,6 @@
 img/
+original-img/
 snd/
+Gruntfile.js
+package.json
+node_modules/
