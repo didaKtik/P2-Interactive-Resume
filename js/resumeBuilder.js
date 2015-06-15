@@ -10,7 +10,7 @@ var drawResume = function() {
 		year : '1991+',
 		color : '#a65628',
 		snd : 'bullet-shell-1',
-		allTheRest : [
+		schools : [
 			{
 				'date' : '1991 -<br> 2008',
 				'institution' : 'In the melting pot',
@@ -20,6 +20,21 @@ var drawResume = function() {
 					'Got interested in the trajectory of cannonballs.'
 				],
 				'img' : 'arcachon'
+			}
+		],
+		allTheRest : [
+			{
+				'type' : 'movie',
+				'title' : 'Toy Story',
+				'youtubeId' : 'KYz2wyBy3kc',
+				'poster' : 'https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg'
+			},
+			{
+				'type' : 'book',
+				'title' : 'Les Schtroumpfs',
+				'author' : 'Peyo',
+				'poster' : 'schtroumpfs',
+				'description' : 'A characteristic of the Smurf language is the frequent use of the undefinable word "smurf" and its derivatives in a variety of meanings. The Smurfs frequently replace both nouns and verbs in everyday speech with the word "smurf": "We\'re going smurfing on the River Smurf today." When used as a verb, the word "Smurf" typically means "to make", "to be", "to like", or "to do". Humans have found that replacing ordinary words with the term "smurf" at random is not enough: in one adventure, Peewit explains to some other humans that the statement "I\'m smurfing to the smurf" means "I\'m going to the wood", but a Smurf corrects him by saying that the proper statement would be "I\'m smurfing to the smurf"; whereas what Peewit said was "I\'m warbling to the dawn". So "I\'m smurfing to the smurf" is not the same as "I\'m smurfing to the smurf".'
 			}
 		]
 	};
@@ -411,8 +426,8 @@ var drawResume = function() {
 	//
 	// GENERAL PURPOSE FUNCTIONS TO DISPLAY RESUME ENTRIES
 	//
-	// entryType can be: school, onlineCourse, work, project, language
-	// entriesType can be: schools, onlineCourses, works, projects, languages
+	// entryType can be: school, onlineCourse, work, rest
+	// entriesType can be: schools, onlineCourses, works, allTheRest
 	var HTMLtitle =
 		'<div class="row">' +
 		  '<div class="col-xs-12">' +
@@ -518,7 +533,7 @@ var drawResume = function() {
 	    '</div>' +
 	    '<div class="col-xs-12 col-sm-7">' +
 	      '<div class="entry-title">' +
-	        '<a class="a-entry-title" href=%url%>%title%</a>' +
+	        '<a href=%url%>%title%</a>' +
 	      '</div>' +
 	      '<div class="entry-institution"> - %institution%</div>' +
 	    '</div>' +
@@ -597,70 +612,105 @@ var drawResume = function() {
 	//
 
 	// MAIN HTML
-	var HTMLrestEntry =
-	  '<div class="row rest-entry">' +
-	    '<div class="col-xs-12 col-sm-2 entry-date">' +
-	      '%date%' +
-	    '</div>' +
-	    '<div class="col-xs-12 col-sm-7">' +
-	      '<div class="entry-institution">%institution%</div>' +
-	      '<div class="entry-location"> - %location%</div>' +
-	      '<div class="entry-descriptions"></div>' +
-	    '</div>' +
-	  '</div>';
+	var HTMLrestRow = '<div class="row rest-entry"></div>'
+	var HTMLrestMovieEntry =
+      '<div class="col-xs-3 col-md-1 movie-tile text-center" data-trailer-youtube-id="%youtubeId%" data-toggle="modal" data-target="#trailer">' +
+        '<img class="movie-tile-poster" src="%poster%" alt="Poster of the film %title%">' +
+        '<h4 class="movie-tile-title">%title%</h4>' +
+      '</div>';
+    // Information to be displayed in the modal are 'hidden' in divs that are not displayed.
+	var HTMLrestBookEntry =
+      '<div class="col-xs-3 col-md-1 book-tile text-center" data-toggle="modal" data-target="#book-modal">' +
+        '<img class="book-tile-poster" src="%poster%" alt="Cover of the book %title%">' +
+        '<h4 class="book-tile-title">%title%</h4>' +
+        '<div class="book-tile-author">%author%</div>' +
+        '<div class="book-tile-description">%description%</div>' +
+      '</div>';
 
 	// DISPLAY FUNCTION
 	var displayAllTheRest = function(allTheRest) {
 		// Header is added
 		addTitle('All The Rest', 'allTheRest');
+		// Row is added
+		$('#allTheRest').append(HTMLrestRow);
 		// Entries are added
 		allTheRest.forEach(function(rest) {
-			var html = HTMLrestEntry
-				.replace('%date%', rest.date)
-				.replace('%institution%', rest.institution)
-				.replace('%location%', rest.location);
-			$('#allTheRest').append(html);
-			// Add descriptions (bullet points)
-			addDescriptions(rest);
-			// Add image if it exists
-			addImg(rest, 'rest');
+			if (rest.type === 'movie') {
+				var html = HTMLrestMovieEntry
+					.replace('%youtubeId%', rest.youtubeId)
+					.replace(/%title%/g, rest.title);
+				// Detect if poster is a local or an internet url.
+				if (rest.poster.match(/http/)) {
+					html = html.replace('%poster%', rest.poster);
+				} else {
+					html = html.replace('%poster%', './img/' + rest.poster + '.jpg');
+				}
+				$('.rest-entry').append(html);
+			} else if (rest.type === 'book') {
+				var html = HTMLrestBookEntry
+					.replace(/%title%/g, rest.title)
+					.replace('%author%', rest.author)
+					.replace('%description%', rest.description);
+				if (rest.poster.match(/http/)) {
+					html = html.replace('%poster%', rest.poster);
+				} else {
+					html = html.replace('%poster%', './img/' + rest.poster + '-380.jpg');
+				}
+				$('.rest-entry').append(html);
+			}
 		});
 	};
 
-
-	//
-	// MOVIE TILES
-	//
-	// Pause the video when the modal is closed
-	// $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
-	//     // Remove the src so the player itself gets removed, as this is the only
-	//     // reliable way to ensure the video stops playing in IE
-	//     $("#trailer-video-container").empty();
-	// });
-	// // Start playing the video whenever the trailer modal is opened
-	// $(document).on('click', '.movie-tile', function (event) {
-	//     var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
-	//     var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
-	//     $("#trailer-video-container").empty().append($("<iframe></iframe>", {
-	//       'id': 'trailer-video',
-	//       'type': 'text-html',
-	//       'src': sourceUrl,
-	//       'frameborder': 0
-	//     }));
-	// });
-	// // Animate in the movies when the page loads
-	// $(document).ready(function () {
-	//   $('.movie-tile').hide().first().show("fast", function showNext() {
-	//     $(this).next("div").show("fast", showNext);
-	//   });
-	// });
+	// TILE EVENTS
+	// Pause the video when a modal is closed
+	$(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+	    // Remove the src so the player itself gets removed, as this is the only
+	    // reliable way to ensure the video stops playing in IE
+	    $("#trailer-video-container").empty();
+	});
+	// Start playing the trailer when the movie tile is clicked
+	$(document).on('click', '.movie-tile', function (event) {
+	    var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+	    var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+	    $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+	      'id': 'trailer-video',
+	      'type': 'text-html',
+	      'src': sourceUrl,
+	      'frameborder': 0
+	    }));
+	});
+	// Fill and show the book modal when a book tile is clicked
+	var HTMLbookModal =
+	    '<div class="modal-dialog">' +
+	      '<div class="modal-content">' +
+	        '<div class="modal-header">' +
+	          '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+	          '<div id="book-modal-title">%title% - </div>' +
+	          '<div id="book-modal-author">%author%</div>' +
+	        '</div>' +
+	        '<div class="modal-body" id="book-modal-content">' +
+	          '<img id="book-modal-img" src=%poster% alt="Cover picture of %title% by %author%">' +
+	          '<div id="book-modal-description">%description%</div>' +
+	        '</div>' +
+	      '</div>' +
+	    '</div>'
+	$(document).on('click', '.book-tile', function (event) {
+		var poster = $(this).children('img').attr('src');
+		var title = $(this).children('.book-tile-title').text();
+		var author = $(this).children('.book-tile-author').text();
+		var description = $(this).children('.book-tile-description').text();
+		var html = HTMLbookModal.replace('%poster%', poster)
+			.replace(/%title%/g, title)
+			.replace(/%author%/g, author)
+			.replace('%description%', description);
+	    $("#book-modal").empty().append(html);
+	});
 
 
 	//
 	// MAP
 	//
 
-	// map is a global variable
 	var map;
 
 	function initializeMap() {
@@ -673,7 +723,6 @@ var drawResume = function() {
 		};
 
 		map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
 
 		/*
 		removeDuplicate() removes duplicate from an array and returns the new array
@@ -754,6 +803,7 @@ var drawResume = function() {
 			placeData.forEach(function(place) {
 				// add an info window to the markers
 				google.maps.event.addListener(place.marker, 'click', function() {
+					console.log(placeData);
 					placeData.forEach(function(plc) {
 						plc.infoWindow.close();
 					});
@@ -784,7 +834,7 @@ var drawResume = function() {
 			// Sometimes lastCallback is called after callback, resulting in a not-complete placeArray
 			// Couldn't figure out how to use $.Deferred with GMaps textSearch (it is not a deferred object)
 			// So this is the tweak, there is certainly something cleaner to do
-			setTimeout(createMapMarker(placeArray), 500);
+			setTimeout(createMapMarker(placeArray), 100);
 		}
 
 		/*
@@ -872,4 +922,4 @@ var drawResume = function() {
 	});
 }
 
-drawResume();
+$(document).ready(drawResume());
